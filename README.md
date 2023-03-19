@@ -13,8 +13,8 @@ FLAGS:
     -V, --version Display version
 
 Presents a user with a yes/no prompt, and reads one line of standard
-input. To avoid ambiguity with whitespaces, exactly one argument string
-is allowed.
+input. To avoid ambiguity with whitespaces, the prompt must be exactly
+one argument.
 
 If the user response begins with 'y' or 'Y' the program completes with a
 successful 0 exit code. If it begins with 'n' or 'N' the program
