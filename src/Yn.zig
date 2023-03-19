@@ -1,6 +1,6 @@
-const yn = @import("yn.zig");
-const Response = yn.Response;
+const command = @import("command.zig");
+const Response = command.Response;
 
 pub fn main() !void {
-    try yn.run(Response.yes);
+    try command.run(Response.yes);
 }
