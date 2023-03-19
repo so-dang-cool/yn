@@ -18,12 +18,13 @@ const USAGE =
     \\input. To avoid ambiguity with whitespaces, exactly one argument string
     \\is allowed.
     \\
-    \\If the user response begins with 'y' then the program completes with a
-    \\successful 0 exit code. If the user response begins with 'n' the program
+    \\If the user response begins with 'y' or 'Y' the program completes with a
+    \\successful 0 exit code. If it begins with 'n' or 'N' the program
     \\completes with a failure 1 exit code.
     \\
-    \\When the user gives any other input, Yn defaults to yes, and yN defaults
-    \\to no.
+    \\When the user gives any other input:
+    \\* Yn defaults to yes
+    \\* yN defaults to no
     \\
 ;
 
