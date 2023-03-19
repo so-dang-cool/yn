@@ -34,7 +34,7 @@ pub const Response = enum {
 
     pub fn parse(raw: []const u8, default: Response) Response {
         const left = std.mem.trimLeft(u8, raw, " \t\r\n");
-        
+
         if (std.mem.startsWith(u8, left, "y") or std.mem.startsWith(u8, left, "Y")) {
             return Response.yes;
         } else if (std.mem.startsWith(u8, left, "n") or std.mem.startsWith(u8, left, "N")) {
@@ -79,7 +79,7 @@ pub fn run(default: Response) !void {
 
     // For now, argument is the prompt.
     // TODO: Split main() into two separate executables.
-    try stdout.print("{s} [{s}]: ", .{argument, program});
+    try stdout.print("{s} [{s}]: ", .{ argument, program });
     const rawResponse = stdin.readUntilDelimiterOrEofAlloc(alloc.allocator(), '\n', 128) catch |err| {
         const message = switch (err) {
             error.StreamTooLong => "Response was too many characters.",
