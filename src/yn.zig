@@ -36,17 +36,17 @@ pub const Response = enum {
         const left = std.mem.trimLeft(u8, raw, " \t\r\n");
 
         if (std.mem.startsWith(u8, left, "y") or std.mem.startsWith(u8, left, "Y")) {
-            return Response.yes;
+            return .yes;
         } else if (std.mem.startsWith(u8, left, "n") or std.mem.startsWith(u8, left, "N")) {
-            return Response.no;
+            return .no;
         }
         return default;
     }
 
     pub fn toExitCode(self: Response) u8 {
         return switch (self) {
-            Response.yes => 0,
-            Response.no => 1,
+            .yes => 0,
+            .no => 1,
         };
     }
 };
