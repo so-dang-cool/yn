@@ -87,9 +87,11 @@ pub fn run(default: Response) !void {
         };
         try stderr.print("ERROR: {s}\n", .{message});
         std.os.exit(1);
+    } orelse {
+        std.os.exit(default.toExitCode());
     };
 
-    const response = Response.parse(rawResponse.?, default);
+    const response = Response.parse(rawResponse, default);
 
     std.os.exit(response.toExitCode());
 }
