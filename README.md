@@ -2,6 +2,18 @@
 
 Dirt-simple yes/no prompts for your shell scripts.
 
+## Example
+
+```bash
+if Yn 'Do you want to fight?'; then
+    echo 'Have at ye, scoundrel! 🤺'
+else
+    echo 'Tea then? 🍵'
+fi
+```
+
+## Usage
+
 ```text
 $ Yn --help
 USAGE:
@@ -23,16 +35,6 @@ completes with a failure 1 exit code.
 When the user gives any other input:
 * Yn defaults to yes
 * yN defaults to no
-```
-
-## Example
-
-```bash
-if Yn 'Do you want to fight?'; then
-    echo 'Have at ye, scoundrel! 🤺'
-else
-    echo 'Tea then? 🍵'
-fi
 ```
 
 ## Credits
