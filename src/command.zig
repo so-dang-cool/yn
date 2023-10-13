@@ -52,7 +52,10 @@ pub const Response = enum {
 };
 
 pub fn run(default: Response) !void {
-    var args = std.process.args();
+    var arena = std.heap.ArenaAllocator{ .child_allocator = std.heap.page_allocator, .state = .{} };
+    defer arena.deinit();
+
+    var args = try std.process.argsWithAllocator(arena.allocator());
 
     const programPath = args.next().?;
     const program = std.fs.path.basename(programPath);
